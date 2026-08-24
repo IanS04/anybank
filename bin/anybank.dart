@@ -13,26 +13,13 @@ void main() {
   contaRoberta.saldo = 15000;
   print(contaRoberta.saldo);
 
-  receber(contaMatheus, 1500);
-
+  contaMatheus.receber(1500);
   print(contaMatheus.titular);
   print(contaMatheus.saldo);
 
-  enviar(contaMatheus, 6500);
+  contaMatheus.enviar(6500);
   print(contaMatheus.titular);
   print(contaMatheus.saldo);
-}
-
-void receber(Conta conta, double valor) {
-  conta.saldo += valor;
-}
-
-void enviar(Conta conta, double valor) {
-  if(conta.saldo >= valor) {
-    conta.saldo -= valor;
-    }else{
-      print("saldo insuficiente");
-    }
 }
 
 class Conta {
@@ -40,5 +27,17 @@ class Conta {
   double saldo;
 
   Conta(this.titular, this.saldo);
+
+  void receber(double valor) {
+  saldo += valor;
+}
+
+  void enviar(double valor) {
+  if(saldo >= valor) {
+    saldo -= valor;
+    }else{
+      print("saldo insuficiente");
+    }
+}
 }
 
