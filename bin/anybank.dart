@@ -7,17 +7,11 @@ void main() {
   List<Conta> contas = <Conta> [contaMatheus, contaRoberta];
   for (Conta conta in contas) {
     print(conta.titular);
-    print(conta._saldo);
+    print(conta.valorSaldo);
   }
   
-  contaRoberta._saldo = 15000;
-  print(contaRoberta._saldo);
-
+  contaRoberta.receber(5000);
   contaMatheus.receber(1500);
-  print(contaMatheus.titular);
-  print(contaMatheus._saldo);
+  contaMatheus.enviar(3000);
 
-  contaMatheus.enviar(6500);
-  print(contaMatheus.titular);
-  print(contaMatheus._saldo);
 }
